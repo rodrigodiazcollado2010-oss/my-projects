@@ -9,5 +9,5 @@ def apply_discount(price, discount):
         return 'The discount should be between 0 and 100'
     
     return price - (price * discount/100)
-# to use apply discount use the function in the followimg way : apply_discount(x, y),    (x) means price and (y) means discount amount
-# example : apply_discount(50, 80)
+# to use apply discount use the function in the followimg way : print(apply_discount(x, y)),    (x) means price and (y) means discount amount
+# example : print(apply_discount(50, 80))
