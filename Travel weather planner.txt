@@ -1,8 +1,8 @@
-has_bike = True
-has_car = False
-has_ride_share_app = True
-is_raining = False
-distance_mi = 3
+has_bike = bool(input('Type True or False'))
+has_car = bool(input('Type True or False'))
+has_ride_share_app = bool(input('Type True or False'))
+is_raining = bool(input('Type True or False'))
+distance_mi = int(input('Type the amount of miles'))
 
 if not distance_mi:
     print(False)
