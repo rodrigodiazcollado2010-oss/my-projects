@@ -1,6 +1,6 @@
-available_eggs = 1
-available_flour = 2
-available_sugar = 3
+available_eggs = int(input('Type the amount of eggs'))
+available_flour = int(input('Type the amount of flour'))
+available_sugar = int(input('Type the amount of sugar'))
 
 def check_kitchen_stock():
     total_items = available_eggs + available_flour + available_sugar
@@ -11,6 +11,8 @@ def check_kitchen_stock():
 
 check_kitchen_stock()
 
+# usage of eggs
+
 def use_eggs(available_eggs, eggs_to_use):
     if eggs_to_use > available_eggs:
         print('The kitchen does not have enough eggs.')
@@ -19,8 +21,6 @@ def use_eggs(available_eggs, eggs_to_use):
     print(f'{eggs_to_use} egg(s) used out of {available_eggs} available.')
     return available_eggs - eggs_to_use
 
-use_eggs(available_eggs, 1)
-print(available_eggs)
 
 def make_fried_egg(available_eggs):
     has_enough_eggs = available_eggs >= 1
@@ -35,4 +35,59 @@ def make_fried_egg(available_eggs):
 
 available_eggs = make_fried_egg(available_eggs)
 
+# usage of flour
+
+def use_flour(available_flour, flour_to_use):
+    if flour_to_use > available_flour:
+        print('The kitchen does not have enough flour.')
+        return available_flour
+
+    print(f'{flour_to_use} flour used out of {available_flour} available.')
+    return available_flour - flour_to_use
+
+
+def make_muffin(available_flour):
+    has_enough_flour = available_flour >= 1
+
+    if has_enough_flour:
+        available_flour = use_flour(available_flour, 1)
+        print('Made a muffin. Yummy!')
+    else:
+        print('Could not make a muffin. Not enough flour!')
+
+    return available_flour
+
+available_flour = make_muffin(available_flour)
+
+# usage of sugar 
+
+def use_sugar(available_sugar, sugar_to_use):
+    if sugar_to_use > available_sugar:
+        print('The kitchen does not have enough sugar.')
+        return available_sugar
+
+    print(f'{sugar_to_use} sugar used out of {available_sugar} available.')
+    return available_sugar - sugar_to_use
+
+def make_caramel(available_sugar):
+    has_enough_sugar = available_sugar >= 1
+
+    if has_enough_sugar:
+        available_sugar = use_sugar(available_sugar, 2)
+        print('Made caramel. Yummy!')
+    else:
+        print('Could not make caramel. Not enough sugar!')
+
+    return available_sugar
+
+available_sugar = make_caramel(available_sugar)
+
+# check final inventory
+
 check_kitchen_stock()
+
+
+
+
+
+
