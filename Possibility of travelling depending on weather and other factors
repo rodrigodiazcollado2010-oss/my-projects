@@ -1,0 +1,23 @@
+has_bike = input('Own a bike? (true/false) ').lower().strip() == 'true'
+has_car = input('Own a car? (true/false) ').lower().strip() == 'true'
+has_ride_share_app = input('Do you have a ride share app? (true/false) ').lower().strip() == 'true'
+is_raining = input('Is it raining? (true/false) ').lower().strip() == 'true'
+distance_mi = int(input('Type the amount of miles: '))
+
+if not distance_mi:
+    print(False)
+
+elif distance_mi <= 1 and not is_raining:
+    print(True)
+
+elif distance_mi > 1 and distance_mi <= 6:
+    if has_bike and not is_raining:
+        print(True)
+    else:
+        print(False)
+
+else:
+    if has_car or has_ride_share_app:
+        print(True)
+    else:
+        print(False)
